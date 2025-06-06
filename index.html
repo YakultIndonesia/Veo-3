@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Veo 3 - Video Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>AI Veo 3 - Text to Video</h1>
+    <textarea id="prompt" placeholder="Describe your video... (e.g. 'A futuristic city with flying cars')"></textarea>
+
+    <label for="style">Choose Style:</label>
+    <select id="style">
+      <option value="cinematic">🎬 Cinematic</option>
+      <option value="drone">🚁 Drone Shot</option>
+      <option value="animation">🎨 Animation</option>
+      <option value="timelapse">⏱ Timelapse</option>
+    </select>
+
+    <label for="duration">Duration (seconds):</label>
+    <input type="range" id="duration" min="5" max="60" value="15" />
+    <span id="durationLabel">15s</span>
+
+    <button onclick="generateVideo()">🎥 Generate Video</button>
+
+    <div class="output" id="outputArea">
+      <img id="loading" src="assets/loading.gif" style="display: none;" />
+      <video id="resultVideo" controls style="display: none;">
+        <source src="assets/sample-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
